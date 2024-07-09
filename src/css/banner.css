@@ -14,10 +14,8 @@
   border-radius: 25px;
   object-fit: cover;
   min-height: 111px;
-}
-
-.banner1 {
-  filter: brightness(60%);
+  height: 223px;
+  filter: brightness(40%);
 }
 
 .banner2 {

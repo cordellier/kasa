@@ -1,18 +1,17 @@
 import React from "react";
-import Header from "./../components/header";
-import Footer from "./../components/footer";
-import { Banner1 } from "./../components/banner";
-import Layout from "./../components/layout";
+import Banner from "../components/Banner";
+import Layout from "../components/Layout";
+import backgroundImage from "./../images/banner1.png";
 
 const HomePage = () => {
   return (
-    <>
-      <Layout>
-        <Header />
-        <Banner1 />
-      </Layout>
-      <Footer />
-    </>
+    <Layout>
+      <Banner
+        backgroundImage={backgroundImage}
+        title="Chez vous, partout et ailleurs"
+        classStyle="banner1"
+      />
+    </Layout>
   );
 };
 

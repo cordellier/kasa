@@ -1,7 +1,7 @@
-import "./../css/error.css";
+import "./../css/Error.css";
 import { Link } from "react-router-dom";
 
-export default function Error() {
+export default function Erreur() {
   return (
     <div className="error-page">
       <h1>404</h1>

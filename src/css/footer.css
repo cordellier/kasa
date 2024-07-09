@@ -1,6 +1,9 @@
-/* FOOTER */
-
+/* Footer.css */
 .footer {
+    position: relative; /* Utilisé pour appliquer des styles de largeur */
+    left: 50%;
+    width: calc(40% + 1440px);
+    margin-left: -50vw;
     height: 209px;
     background-color: #000000;
     color: #FFF;
@@ -8,6 +11,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .content {
@@ -19,6 +23,7 @@
     line-height: 34px;
     letter-spacing: 0em;
     text-align: center;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 600px) {
