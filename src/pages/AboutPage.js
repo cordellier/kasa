@@ -7,8 +7,10 @@ import About from "../components/About";
 const AboutPage = () => {
   return (
     <Layout>
-      <Banner backgroundImage={backgroundImage} classStyle="banner2" />
-      <About />
+      <>
+        <Banner backgroundImage={backgroundImage} classStyle="banner2" />
+        <About />
+      </>
     </Layout>
   );
 };

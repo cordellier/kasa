@@ -1,6 +1,6 @@
 import React from "react";
-import Collapse from "./../css/Collapse.css"
 import './../css/About.css';
+import Collapse from "./Collapse";
 
 const About = () => {
   return (
