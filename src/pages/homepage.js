@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../components/Banner";
 import Layout from "../components/Layout";
 import backgroundImage from "./../images/banner1.png";
+import LogementsMenu from "./../components/LogementsMenu";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
         title="Chez vous, partout et ailleurs"
         classStyle="banner1"
       />
+      <LogementsMenu />
     </Layout>
   );
 };

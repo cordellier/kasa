@@ -1,9 +1,6 @@
 /* Footer.css */
 .footer {
-    position: relative; /* Utilisé pour appliquer des styles de largeur */
-    left: 50%;
-    width: calc(40% + 1440px);
-    margin-left: -50vw;
+    width: 100%; /* Assurez-vous que le footer prend toute la largeur de l'écran */
     height: 209px;
     background-color: #000000;
     color: #FFF;
@@ -12,28 +9,29 @@
     justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
+    padding: 20px; /* Ajout de padding pour les petits écrans */
 }
 
 .content {
-    width: 513px;
-    height: 46px;
-    font-family: Montserrat;
-    font-size: 24px;
+    max-width: 90%; /* Utilisation de max-width pour s'adapter aux petits écrans */
+    font-size: 1.5em; /* Utilisation d'unités relatives */
     font-weight: 500;
-    line-height: 34px;
-    letter-spacing: 0em;
+    line-height: 1.4em;
     text-align: center;
     box-sizing: border-box;
 }
 
 @media screen and (max-width: 600px) {
     .content {
-        font-size: 12px;
-        line-height: 17px;
-        width: 133px;
+        font-size: 1em; /* Taille de police plus petite pour les petits écrans */
+        line-height: 1.2em;
     }
+}
 
-    .mobile-text {
-        display: block;
+/* Optionnel: Réduire la hauteur du footer sur les très petits écrans */
+@media screen and (max-width: 400px) {
+    .footer {
+        height: auto;
+        padding: 10px;
     }
 }
