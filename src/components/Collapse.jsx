@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './../css/Collapse.css'; // Import CSS for styling
 
 const Collapse = ({ title, content }) => {
@@ -8,24 +9,31 @@ const Collapse = ({ title, content }) => {
     setIsCollapsed(!isCollapsed);
   };
 
-    const renderContent = () => {
-      if (Array.isArray(content)) {
-        return (
-          <ul>
-            {content.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        );
-      } else {
-        return <p>{content}</p>;
-      }
-    };
-  
+  const renderContent = () => {
+    if (Array.isArray(content)) {
+      return (
+        <ul>
+          {content.map((item, index) => (
+            <li key={index}>{item}</li> // Il est préférable d'utiliser un ID unique si disponible
+          ))}
+        </ul>
+      );
+    } else {
+      return <p>{content}</p>;
+    }
+  };
 
   return (
     <div className="collapse">
-      <div className="collapse-header" onClick={toggleCollapse}>
+      <div 
+        className="collapse-header" 
+        onClick={toggleCollapse} 
+        onKeyPress={(e) => (e.key === 'Enter' || e.key === ' ') && toggleCollapse()} 
+        role="button" 
+        tabIndex="0"
+        aria-expanded={!isCollapsed}
+        aria-controls="collapse-content"
+      >
         <div className="collapse-title">{title}</div>
         <div className={`collapse-icon ${isCollapsed ? 'closed' : 'open'}`}>
           <svg
@@ -42,10 +50,17 @@ const Collapse = ({ title, content }) => {
           </svg>
         </div>
       </div>
-      {!isCollapsed && <div className="collapse-content">{renderContent()}</div>}
+      {!isCollapsed && <div id="collapse-content" className="collapse-content">{renderContent()}</div>}
     </div>
   );
 };
 
+Collapse.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]).isRequired
+};
 
 export default Collapse;
