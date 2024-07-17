@@ -4,11 +4,9 @@ import Layout from "../components/Layout";
 
 const LogementPage = () => {
   return (
-    <>
-      <Layout>
-        <LogementsPage />
-      </Layout>
-    </>
+    <Layout>
+      <LogementsPage />
+    </Layout>
   );
 };
 
