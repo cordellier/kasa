@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './../css/Collapse.css'; // Import CSS for styling
+import './../css/Collapse.css';
 
 const Collapse = ({ title, content }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
