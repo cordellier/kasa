@@ -2,8 +2,9 @@ import React from "react";
 import Banner from "../components/Banner";
 import Layout from "../components/Layout";
 import backgroundImage from "./../images/banner1.png";
-import LogementsMenu from "./../components/LogementsMenu";
-
+import "./../css/LogementsMenu.css";
+import LogementsCard from "./../components/LogementsCard";
+import logementsData from "../data/logements.json";
 const HomePage = () => {
   return (
     <Layout>
@@ -12,7 +13,18 @@ const HomePage = () => {
         title="Chez vous, partout et ailleurs"
         classStyle="banner1"
       />
-      <LogementsMenu />
+      <div className="logements-menu">
+        <div className="grid-container">
+          {logementsData.map((logement) => (
+            <LogementsCard
+              key={logement.id}
+              id={logement.id}
+              title={logement.title}
+              cover={logement.cover}
+            />
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 };
