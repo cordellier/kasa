@@ -5,6 +5,7 @@ import backgroundImage from "./../images/banner1.png";
 import "./../css/LogementsMenu.css";
 import LogementsCard from "./../components/LogementsCard";
 import logementsData from "../data/logements.json";
+
 const HomePage = () => {
   return (
     <Layout>
