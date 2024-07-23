@@ -1,8 +1,10 @@
+/* BANNER */
+
 import React from "react";
 import PropTypes from 'prop-types';
 import "./../css/Banner.css";
 
-const Banner = ({ backgroundImage, title, classStyle }) => {
+const Banner = ({ backgroundImage, title, classStyle = '' }) => {
   const titleArray = title?.split(',');
 
   return (
@@ -24,12 +26,9 @@ const Banner = ({ backgroundImage, title, classStyle }) => {
 
 Banner.propTypes = {
   backgroundImage: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   classStyle: PropTypes.string,
 };
 
-Banner.defaultProps = {
-  classStyle: '',
-};
-
 export default Banner;
+

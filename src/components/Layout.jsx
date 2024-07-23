@@ -1,4 +1,5 @@
-// Layout.jsx
+/* LAYOUT */
+
 import React from "react";
 import PropTypes from "prop-types";
 import "./../css/Layout.css"; 

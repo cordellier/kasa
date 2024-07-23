@@ -1,3 +1,5 @@
+/* COLLAPSE */
+
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './../css/Collapse.css';
@@ -13,8 +15,8 @@ const Collapse = ({ title, content }) => {
     if (Array.isArray(content)) {
       return (
         <ul>
-          {content.map((item, index) => (
-            <li key={index}>{item}</li> // Il est préférable d'utiliser un ID unique si disponible
+          {content.map((item) => (
+            <li key={item.id}>{item.text}</li>
           ))}
         </ul>
       );
@@ -22,6 +24,7 @@ const Collapse = ({ title, content }) => {
       return <p>{content}</p>;
     }
   };
+  
 
   return (
     <div className="collapse">
@@ -60,7 +63,7 @@ Collapse.propTypes = {
   content: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
-  ]).isRequired
+  ])
 };
 
 export default Collapse;

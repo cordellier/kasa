@@ -1,3 +1,5 @@
+/* LOGEMENTSPAGE */
+
 import React, { useState, useEffect } from 'react';
 import Slideshow from './Slideshow';
 import logementsData from '../data/logements.json';
@@ -15,15 +17,17 @@ const LogementsPage = () => {
     if (!selectedLogement) {
       navigate('/404');
     } else {
-      setLogement(selectedLogement);
+      const logementWithCorrectRating = {
+        ...selectedLogement,
+        rating: Number(selectedLogement.rating)
+      };
+      setLogement(logementWithCorrectRating);
     }
   }, [id, navigate]);
 
-  
   if (!logement) {
     return <ErrorPage />;
   }
-
 
   const { pictures } = logement;
 

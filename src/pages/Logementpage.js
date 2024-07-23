@@ -1,3 +1,5 @@
+/* LOGEMENT */
+
 import React from "react";
 import LogementsPage from "./../components/LogementsPage";
 import Layout from "../components/Layout";

@@ -1,3 +1,5 @@
+/* ERROR */
+
 import "./../css/Error.css";
 import { Link } from "react-router-dom";
 

@@ -7,8 +7,8 @@ import './../css/Tags.css';
 const Tags = ({ tags }) => {
     return (
         <ul className="logement-tags-list">
-            {tags.map((tag, index) => (
-                <li key={index} className="logement-tags">{tag}</li>
+            {tags.map(tag => (
+                <li key={tag} className="logement-tags">{tag}</li>
             ))}
         </ul>
     );
@@ -19,3 +19,4 @@ Tags.propTypes = {
 };
 
 export default Tags;
+

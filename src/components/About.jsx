@@ -1,3 +1,5 @@
+/* ABOUT */
+
 import React from "react";
 import './../css/About.css';
 import Collapse from "./Collapse";

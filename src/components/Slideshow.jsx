@@ -1,3 +1,5 @@
+/* SILDESHOW */
+
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import './../css/Slideshow.css';
@@ -24,9 +26,9 @@ const Slideshow = ({ images }) => {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => {
-          window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('keydown', handleKeyDown);
         };
-      }, [goToPreviousSlide, goToNextSlide]);
+    }, [goToPreviousSlide, goToNextSlide]);
 
     const shouldRenderButtons = images.length > 1;
 
@@ -34,32 +36,30 @@ const Slideshow = ({ images }) => {
         <div className="slideshow">
             <div className="slide-container">
                 {shouldRenderButtons && (
-                    <div
+                    <button
                         onClick={goToPreviousSlide}
                         className="prev"
-                        role="button"
                         tabIndex={0}
                         onKeyDown={(e) => e.key === 'Enter' && goToPreviousSlide()}
-                    >
+                        >
                         <svg width="48" height="80" viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M47.04 7.78312L39.92 0.703125L0.359985 40.3031L39.96 79.9031L47.04 72.8231L14.52 40.3031L47.04 7.78312Z" fill="white" />
                         </svg>
-                    </div>
+                    </button>
                 )}
                 <img src={images[currentSlide]} alt={`Slide ${currentSlide}`} className="slide-image" />
                 <div className="slide-counter">{currentSlide + 1}/{images.length}</div>
                 {shouldRenderButtons && (
-                    <div
+                    <button
                         onClick={goToNextSlide}
                         className="next"
-                        role="button"
                         tabIndex={0}
                         onKeyDown={(e) => e.key === 'Enter' && goToNextSlide()}
                     >
                         <svg width="48" height="80" viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.960022 72.3458L8.04002 79.4258L47.64 39.8258L8.04002 0.22583L0.960022 7.30583L33.48 39.8258L0.960022 72.3458Z" fill="white" />
                         </svg>
-                    </div>
+                    </button>
                 )}
             </div>
         </div>
@@ -67,7 +67,7 @@ const Slideshow = ({ images }) => {
 };
 
 Slideshow.propTypes = {
-    images: PropTypes.arrayOf(PropTypes.string).isRequired
+    images: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default Slideshow;

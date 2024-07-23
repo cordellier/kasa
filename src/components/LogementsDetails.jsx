@@ -1,3 +1,5 @@
+/* LOGEMENTSDETAILS */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import './../css/LogementsDetails.css';

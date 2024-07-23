@@ -1,3 +1,5 @@
+/* LOGEMENTSCARD */
+
 import './../css/LogementsCard.css';
 import React from 'react';
 import PropTypes from 'prop-types';
